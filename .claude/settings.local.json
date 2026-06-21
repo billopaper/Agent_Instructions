@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p _scratch)",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    r=[]\\\\n    for i in range\\(1,n+1\\):\\\\n        if i%%15==0: r.append\\(\"FizzBuzz\"\\)\\\\n        elif i%%3==0: r.append\\(\"Fizz\"\\)\\\\n        elif i%%5==0: r.append\\(\"Buzz\"\\)\\\\n        else: r.append\\(str\\(i\\)\\)\\\\n    return r\\\\n')",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    return [str\\(i\\) for i in range\\(1, n+1\\)]\\\\n')",
+      "Bash(printf 'def fizzbuzz\\(n\\)\\\\n    return []\\\\n')",
+      "Bash(python grading/validate.py train/01_fizzbuzz _scratch/correct.py)",
+      "Bash(python ../../../grading/validate.py train/01_fizzbuzz solution.py)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(rm -rf grading/.runstate _t)",
+      "Bash(mkdir -p _t)",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    raise ValueError\\(\"nope\"\\)\\\\n')",
+      "Bash(python grading/validate.py train/01_fizzbuzz _t/bad.py)",
+      "Bash(rm -rf _t grading/.runstate)",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    return [str\\(i\\) for i in range\\(1,n+1\\)]\\\\n')",
+      "Bash(python grading/validate.py train/01_fizzbuzz _t/sol.py)",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    r=[]\\\\n    for i in range\\(1,n+1\\):\\\\n        r.append\\(\"FizzBuzz\" if i%%15==0 else \"Fizz\" if i%%3==0 else \"Buzz\" if i%%5==0 else str\\(i\\)\\)\\\\n    return r\\\\n')",
+      "Bash(python -c \"import json,glob; print\\(json.dumps\\(json.load\\(open\\(glob.glob\\('grading/.runstate/*.json'\\)[0]\\)\\), indent=2\\)\\)\")",
+      "Bash(python -)",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    return [\"Fizz\"*\\(i%%3==0\\)+\"Buzz\"*\\(i%%5==0\\) or str\\(i\\) for i in range\\(1,n+1\\)]\\\\n')",
+      "Bash(printf 'def fizzbuzz\\(n\\):\\\\n    return []\\\\n')",
+      "Bash(rm -rf grading/.runstate)",
+      "Bash(python grading/validate.py train/01_fizzbuzz agents/stepwise-agent/01_fizzbuzz/solution.py)",
+      "Bash(python grading/validate.py train/01_fizzbuzz agents/oop-agent/01_fizzbuzz/solution.py)",
+      "Bash(python grading/validate.py validation/bytecode-vm agents/smart-agent/val/solution.py)",
+      "Bash(taskkill //IM python.exe //F)",
+      "Bash(rm -f grading/.runstate/*bytecode*)",
+      "Bash(cat)",
+      "Bash(timeout 5 python grading/validate.py validation/bytecode-vm _t/correct.py)",
+      "Bash(timeout 5 python grading/validate.py validation/bytecode-vm _t/true_division.py)",
+      "Bash(mkdir -p _t2)",
+      "Bash(timeout 5 python grading/validate.py validation/bytecode-vm _t2/true_division.py)",
+      "Bash(rm -rf _t2)"
+    ]
+  }
+}

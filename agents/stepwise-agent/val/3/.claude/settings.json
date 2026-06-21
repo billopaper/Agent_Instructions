@@ -1,0 +1,19 @@
+{
+  "_comment": "Copy to <agent-task-folder>/.claude/settings.json, then open Claude Code in that folder. Console mode: the agent's whole world is this task folder. defaultMode acceptEdits + explicit Edit(*)/Write(*) allows mean no prompts on solution.py/best.py/records.md/reasoning.md; allow Bash(python:*) auto-runs the grader and python file ops. The deny rules still block reading outside the folder and reading grading/. A raw shell is not bound by tool denies - for a hardened run, use a separate OS account or container that cannot read grading/.",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "deny": [
+      "Read(../**)",
+      "Glob(../**)",
+      "Grep(../**)",
+      "Read(**/grading/**)",
+      "Glob(**/grading/**)",
+      "Grep(**/grading/**)"
+    ],
+    "allow": [
+      "Bash(python:*)",
+      "Edit(*)",
+      "Write(*)"
+    ]
+  }
+}

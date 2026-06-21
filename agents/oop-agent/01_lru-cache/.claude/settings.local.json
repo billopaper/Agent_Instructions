@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Set-Location -Path \"c:\\\\Users\\\\micha\\\\Documents\\\\GIT\\\\MasterPrompt\\\\agents\\\\oop-agent\\\\02_lru-cache\")"
+    ]
+  }
+}

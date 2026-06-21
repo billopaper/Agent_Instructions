@@ -1,0 +1,10 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Grader run-counter state (generated per solution)
+grading/.runstate/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

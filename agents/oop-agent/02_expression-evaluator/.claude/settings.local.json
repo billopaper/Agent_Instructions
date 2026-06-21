@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\micha\\\\Documents\\\\GIT\\\\MasterPrompt\\\\agents\\\\oop-agent\\\\04_expression-evaluator\\\\best.py\" \"c:\\\\Users\\\\micha\\\\Documents\\\\GIT\\\\MasterPrompt\\\\agents\\\\oop-agent\\\\04_expression-evaluator\\\\solution.py\" -Force)",
+      "Bash(Copy-Item solution.py best.py -Force)"
+    ]
+  }
+}

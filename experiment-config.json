@@ -1,0 +1,64 @@
+{
+  "agentCount": 5,
+  "controlTaskCount": 1,
+  "trainTaskCount": 3,
+  "validationTaskCount": 1,
+  "runLimit": 10,
+  "runLimitEnforcedBy": "grader (per-solution count in grading/.runstate/; refuses with exit 3 after the limit). Agents are also told the limit in their prompt.",
+  "measureRepeats": 5,
+  "caseTimeoutSeconds": 30,
+  "runtimeTolerancePct": 10,
+  "promotionRule": "the agent overwrites best.py only if the new correct result improves at least 2 of 3 metrics (runtime_s, peak_memory_kb, loc). memory and loc are exact (improved = strictly lower); runtime is improved only if it is more than runtimeTolerancePct lower than the incumbent - a difference within +/-runtimeTolerancePct is a tie, neither better nor worse. The grader reports the MEDIAN runtime over measureRepeats (not the min), so re-grading to chase a lucky low cannot win.",
+  "temperature": 0.92,
+  "language": "python",
+  "grading": {
+    "mode": "external-endpoint",
+    "spec": "grading/README.md",
+    "hiddenTests": true,
+    "exampleIsGraded": false
+  },
+  "styles": [
+    "stepwise",
+    "functional",
+    "oop",
+    "smart-pattern",
+    "prototype-driven"
+  ],
+  "agentAliases": {
+    "stepwise": "Wirth",
+    "functional": "Opa",
+    "oop": "Mustermann",
+    "smart-pattern": "Einstein",
+    "prototype-driven": "Proto"
+  },
+  "failureIfRunsExhausted": true,
+  "optimizeWithRemainingRuns": true,
+  "metrics": [
+    "correctness",
+    "memory",
+    "runtime",
+    "lines_of_code"
+  ],
+  "tasks": {
+    "control": {
+      "Train/00_fizzbuzz": "easy"
+    },
+    "train": {
+      "Train/01_lru-cache": "medium",
+      "Train/02_expression-evaluator": "medium-hard",
+      "Train/03_sudoku-solver": "hard"
+    },
+    "validation": {
+      "Validation/weighted-shortest-path": "hard"
+    }
+  },
+  "phases": [
+    "solve",
+    "verify",
+    "optimize",
+    "meta-plan",
+    "extract-master-prompt",
+    "eval-master-train",
+    "eval-master-validation"
+  ]
+}

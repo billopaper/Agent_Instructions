@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la)",
+      "Bash(cat records.md)",
+      "Bash(cat solution.py)"
+    ]
+  }
+}
